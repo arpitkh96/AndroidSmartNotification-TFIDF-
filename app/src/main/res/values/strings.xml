@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="app_name">Smart Notify</string>
+
+    <!-- Strings related to the Alert Dialog -->
+    <string name="notification_listener_service">Permission required</string>
+    <string name="notification_listener_service_explanation">"For the the app. to work you need to enable the Notification Listener Service. Enable it now?"</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="active_notifications">Active notifications</string>
+    <string name="blocked_notifications">Blocked notifications</string>
+    <string name="active">Active</string>
+    <string name="hidden">Hidden</string>
+    <string name="title_activity_add_filter">AddFilter</string>
+    <string name="empty_text"></string>
+    <string name="action_settings">Settings</string>
+    <string name="title">Title</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="summary">Summary</string>
+    <string name="blacklist">Hide all notifications from this app</string>
+    <string name="add_filter_initial">Filter notifications with</string>
+    <string name="existing_filters_title">Existing filters for this app (%d)</string>
+
+</resources>

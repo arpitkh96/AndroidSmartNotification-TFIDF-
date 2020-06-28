@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            android:background="@color/colorBg"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorFields"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tabs"
+        style="@style/Widget.MaterialComponents.TabLayout"
+        app:tabIndicatorColor="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        app:tabIndicatorGravity="top"
+        android:background="@color/colorBg"
+        android:layout_height="wrap_content">
+    </com.google.android.material.tabs.TabLayout>
+    <com.amaze.smartnotif.utils.CustomViewPager
+        android:id="@+id/fragment_holder"
+        android:layout_width="match_parent"
+        android:layout_above="@id/tabs"
+        android:layout_below="@id/appbar"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

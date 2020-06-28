@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#c0ca33</color>
+    <color name="colorBg">@color/light</color>
+    <color name="colorFields">@color/dark</color>
+    <color name="textColor">@color/textGreyLight</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="dark">@color/black</color>
+    <color name="light">@color/white</color>
+    <color name="textGreyLight">#666</color>
+    <color name="textGreyDark">#A6A6A6</color>
+    <color name="disabled">#eee</color>
+    <color name="hightLightColor">#A6A6A6</color>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/colorBg"
+                android:background="@color/colorBg"
+                app:titleEnabled="false"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:toolbarId="@+id/toolbar">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:titleTextColor="@color/colorFields"
+                    app:title="Filters"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/colorBg"
+                android:padding="8dp"
+                android:paddingTop="16dp"
+                android:layout_height="?attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/icon_holder"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="42dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="42dp"
+                    />
+
+                <TextView
+                    android:id="@+id/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toEndOf="@+id/icon_holder"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/textColor"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:backgroundTint="@color/colorAccent"
+            app:tint="@color/colorBg"
+            android:layout_gravity="bottom|right"
+            app:srcCompat="@drawable/ic_add_black_24dp" />
+
+        <include     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/content"
+            layout="@layout/content_view_filter" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

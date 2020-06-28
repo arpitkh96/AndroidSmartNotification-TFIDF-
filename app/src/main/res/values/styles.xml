@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">#eee</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+    </style>
+
+    <style name="text" parent="@android:style/TextAppearance">
+        <item name="android:textColorHighlight">@color/colorFields</item>
+        <item name="android:textColorLink">@color/colorFields</item>
+        <item name="android:textColor">@color/colorFields</item>
+        <item name="colorControlNormal">@color/colorFields</item>
+        <item name="colorControlActivated">@color/colorFields</item>
+    </style>
+    <style name="textHint" parent="@android:style/TextAppearance">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColorHint">@color/colorFields</item>
+        <item name="android:textColorHighlight">@color/colorFields</item>
+        <item name="android:textColorLink">@color/colorFields</item>
+        <item name="android:textColor">@color/colorFields</item>
+    </style>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#f44336</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="ColoredTextBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/color_fields</item>
+    </style>
+
+</resources>

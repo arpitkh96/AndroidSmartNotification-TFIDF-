@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_add_filter">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:padding="16dp"
+                    android:layout_below="@+id/fields"
+                    android:id="@+id/existing_filters_layout"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/existing_filters_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorFields"
+                        android:text="@string/existing_filters_title"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="right"
+                        android:tint="@color/colorFields"
+                        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_below="@+id/initialLines">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="match_parent"
+                    android:layout_margin="8dp"
+                    app:singleSelection="true"
+                    android:layout_below="@id/summaryFields"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:id="@+id/blackList"
+                        android:checkable="true"
+                        android:clickable="true"
+                        app:closeIconEnabled="false"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconVisible="true"
+                        android:checked="false"
+                        app:rippleColor="@color/colorAccent"
+                        app:chipIconTint="@color/colorAccent"
+                        app:chipStrokeColor="@color/colorAccent"
+                        android:text="@string/blacklist"
+                        />
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        app:chipIconTint="@color/colorAccent"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:clickable="true"
+                        app:closeIconEnabled="false"
+                        app:checkedIconEnabled="true"
+                        app:checkedIconVisible="true"
+                        android:checked="true"
+                        app:rippleColor="@color/colorAccent"
+                        app:chipStrokeColor="@color/colorAccent"
+                        android:text="Filter Similar Notifications"
+                        />
+                </com.google.android.material.chip.ChipGroup>
+
+                <RelativeLayout
+                    android:id="@+id/subtitleFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleFields"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Sub-Title"
+                        android:layout_toLeftOf="@+id/checkSubTitle"
+                        android:id="@+id/subtitleTextLayout">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/subText"
+                            android:layout_height="wrap_content"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/summaryFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/subtitleFields"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Summary"
+                        android:layout_toLeftOf="@+id/checkSummary"
+                        android:id="@+id/summaryTextLayout">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/summaryText"
+                            android:layout_height="wrap_content"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/titleFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Title"
+                        android:layout_toLeftOf="@+id/checkTitle"
+                        android:id="@+id/titleTextLayout">
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/titleText"
+                            android:layout_height="wrap_content"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+            </RelativeLayout>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/initialLines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/add_filter_initial"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <data>
+
+        <variable
+            name="blackListChecked"
+            type="Boolean" />
+    </data>
+</layout>

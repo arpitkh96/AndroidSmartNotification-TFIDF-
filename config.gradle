@@ -1,0 +1,17 @@
+def config= [:]
+config.casSandBoxUrl="https://cas.goo.parsecs307.com"
+config.casDevUrl = "https://cas.lp.parsecs307.com"
+config.casStagingUrl="https://cas.lp.parsecs307.com"
+config.casreleaseUrl = "https://cas.lp.parsecs307.com"
+ext.config=config
+
+def libversions= [:]
+libversions.protobuf="3.0.0"
+libversions.appcompat="1.0.0"
+libversions.androidxcore="1.0.1"
+libversions.material="1.1.0-alpha06"
+libversions.devicenames="1.1.8"
+libversions.gson="2.8.5"
+libversions.kotlincoroutines="1.1.1"
+libversions.fuel="2.0.1"
+ext.libversions=libversions

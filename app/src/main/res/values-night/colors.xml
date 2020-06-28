@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">#9e9d24</color>
+    <color name="colorBg">@color/dark</color>
+    <color name="colorFields">@color/light</color>
+    <color name="textColor">@color/textGreyDark</color>
+    <color name="disabled">#676767</color>
+    <color name="hightLightColor">#676767</color>
+
+</resources>
