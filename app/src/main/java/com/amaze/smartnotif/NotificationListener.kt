@@ -18,6 +18,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.amaze.smartnotif.activities.MainActivity
 import com.amaze.smartnotif.data.*
+import com.amaze.smartnotif.data.tfidf.Tfidfworker
 import com.amaze.smartnotif.notificationlistenerexample.R
 import com.amaze.smartnotif.utils.ConfigureFuel
 import com.amaze.smartnotif.utils.getHolder
@@ -46,7 +47,9 @@ class NotificationListener : NotificationListenerService() {
         System.out.println("onstart")
         broadcastReciever=MyBroadcastReceiver(this@NotificationListener)
         createNotificationChannel()
-
+        GlobalScope.launch {
+            val worker= Tfidfworker.getInstance(this@NotificationListener)
+        }
 
     }
     class MyBroadcastReceiver(internal var caller: NotificationListener) : BroadcastReceiver() {

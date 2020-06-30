@@ -37,13 +37,17 @@ class Vectoriser (var db:AppDatabase){
         }
 
         val df=documentFreq(tf)
+        println("Getting lock")
         rwmutex.writeLock()
+        println("Got lock")
+
         //We cant let Df change parallely while we are also using the model
         df.forEach { word, freq ->
             wordStore.addDf(word,freq)
         }
         vectoriseSamples()
         rwmutex.writeUnlock()
+        println("Done training")
 
 
     }

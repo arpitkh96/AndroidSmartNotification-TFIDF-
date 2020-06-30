@@ -101,6 +101,7 @@
                         android:id="@+id/checkSubTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true" />
                 </RelativeLayout>
@@ -127,6 +128,7 @@
                     <androidx.appcompat.widget.AppCompatCheckBox
                         android:id="@+id/checkSummary"
                         android:layout_width="wrap_content"
+                        android:checked="true"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true" />
@@ -152,6 +154,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
                     <androidx.appcompat.widget.AppCompatCheckBox
                         android:id="@+id/checkTitle"
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.amaze.smartnotif.data.*
+import com.amaze.smartnotif.data.tfidf.Tfidfworker
 import com.amaze.smartnotif.notificationlistenerexample.R
 import com.amaze.smartnotif.notificationlistenerexample.databinding.ActivityAddFilterBinding
 import com.google.android.material.chip.Chip
@@ -69,6 +70,7 @@ class AddFilter() : AppCompatActivity(), CoroutineScope {
                 binding.content.subtitleTextLayout.isEnabled=true
             binding.content.titleTextLayout.isEnabled=true}
         }
+        val worker=Tfidfworker.getInstance(this@AddFilter)
         notification?.let {
             try {
                 val icon = packageManager.getApplicationIcon(it.packageName)
@@ -86,26 +88,36 @@ class AddFilter() : AppCompatActivity(), CoroutineScope {
             var i=0
 
         }
+        println("hey")
         fab.setOnClickListener { view ->
             notification?.let {
 
                 val title = if (binding.content.checkTitle.isChecked && binding.content.titleText.text?.isNotBlank()?:false) binding.content.titleText.text.toString() else "*"
                 val subtitle = if (binding.content.checkTitle.isChecked && binding.content.subText.text?.isNotBlank()?:false) binding.content.subText.text.toString() else "*"
-                val summary = if (binding.content.blackList.isChecked && binding.content.summaryText.text?.isNotBlank()?:false) binding.content.summaryText.text.toString() else "*"
+                val summary = if (binding.content.checkSummary.isChecked && binding.content.summaryText.text?.isNotBlank()?:false) binding.content.summaryText.text.toString() else "*"
                 if (binding.content.blackList.isChecked)blacklist(it.packageName,PreferenceManager.getDefaultSharedPreferences(this))
                 else{
-                    var mainObj=getRulesForApp(it.packageName)?:FilterObj("title", STRING_OP_CONTAINS_IGNORECASE,false, arrayMapOf())
-                    var obj=mainObj
-                    var tempObj= obj.values.get(title)?: FilterObj("subtext", STRING_OP_CONTAINS_IGNORECASE,false, arrayMapOf())
-                    obj.values[title]=tempObj
-                    obj=tempObj
-                    tempObj= obj.values.get(subtitle)?: FilterObj("summary", STRING_OP_CONTAINS_IGNORECASE,false, arrayMapOf())
-                    obj.values[subtitle]=tempObj
-                    obj=tempObj
-                    tempObj= obj.values.get(summary)?: FilterObj(true,true)
-                    obj.values[summary]=tempObj
-                    addRule(it.packageName,mainObj,PreferenceManager.getDefaultSharedPreferences(this))
+//                    var mainObj=getRulesForApp(it.packageName)?:FilterObj("title", STRING_OP_CONTAINS_IGNORECASE,false, arrayMapOf())
+//                    var obj=mainObj
+//                    var tempObj= obj.values.get(title)?: FilterObj("subtext", STRING_OP_CONTAINS_IGNORECASE,false, arrayMapOf())
+//                    obj.values[title]=tempObj
+//                    obj=tempObj
+//                    tempObj= obj.values.get(subtitle)?: FilterObj("summary", STRING_OP_CONTAINS_IGNORECASE,false, arrayMapOf())
+//                    obj.values[subtitle]=tempObj
+//                    obj=tempObj
+//                    tempObj= obj.values.get(summary)?: FilterObj(true,true)
+//                    obj.values[summary]=tempObj
+//                 //   addRule(it.packageName,mainObj,PreferenceManager.getDefaultSharedPreferences(this))
+
                 }
+                var sample=if (title.length>1)title.trim() else ""
+                sample+=" "
+                sample+=if (subtitle.length>1)subtitle.trim() else ""
+                sample+=" "
+                sample+=if (summary.length>1)summary.trim() else ""
+                sample+=" "
+                sample+=it.appName
+                worker.addTrainingSample(sample)
                 Toast.makeText(this,"Added",Toast.LENGTH_SHORT).show()
                 finish()
             }
